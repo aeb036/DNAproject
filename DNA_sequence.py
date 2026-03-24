@@ -5,6 +5,7 @@ def interface():
     print("Fill with Details about the algorithm")
     return input("Name of the File: ")
 
+
 def computeSim(s, t):
     # technique used Needleman-Wunsch Algorithm
     m = len(s)
@@ -15,12 +16,10 @@ def computeSim(s, t):
     for i in range(m+1):
         row = []
         for j in range(n+1):
-            row.append(0)
+            row.append(None)
         dp_table.append(row)
 
-    max_len = 0 
-    end_index_s = 0
-
+    dp_table[0][0] = 0 
 
 
 def FindMostSimilarSubSequence(t, D):
@@ -37,6 +36,7 @@ def FindMostSimilarSubSequence(t, D):
             best_seq = best_seq
     
     return best_seq, best_sim
+
 
 def main():
     # open file_name
